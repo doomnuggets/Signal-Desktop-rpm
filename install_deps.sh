@@ -21,18 +21,31 @@ then
     exit 1
 fi
 
-
-if [ $distro == 'centos' ]
-then
-    sudo $packagemgr install epel-release -y
-fi
-
-sudo $packagemgr install rpm-build node npm gcc-c++ python2 git \
+# Install dependencies for the rpm build process, including the electron
+# package.  The electron package sadly is not in the official repositories of
+# Fedora / CentOS, so we have to build it via npm.
+sudo $packagemgr install rpm-build gcc-c++ python2 git \
     clang dbus-devel gtk3-devel libnotify-devel \
     libgnome-keyring-devel xorg-x11-server-utils libcap-devel \
     cups-devel libXtst-devel alsa-lib-devel libXrandr-devel \
-    GConf2-devel nss-devel libXScrnSaver \
+    GConf2-devel nss-devel libXScrnSaver make \
     -y
+
+# CentOS doesn't ship with an ideal version of node and npm, so we download and
+# install them on our own.
+if [ $distro == 'centos' ]
+then
+    sudo $packagemgr install epel-release -y
+    curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
+    sudo $packagemgr install nodejs -y
+    sudo npm install npm@latest -g
+fi
+
+# Fedora has a decent version for node and npm, we can simply install them.
+if [ $distro == 'fedora' ]
+then
+    udo $packagemgr install node npm -y
+fi
 
 # Install yarn
 if [ ! -f /etc/yum.repos.d/yarn.repo ]
