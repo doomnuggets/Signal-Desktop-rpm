@@ -6,8 +6,8 @@
 Name: Signal-Desktop
 Version: %{version}
 Source0: %{name}-%{version}.tar.gz
-BuildRequires: python2, npm, gcc-c++
-Requires: python2, npm, gcc-c++
+BuildRequires: python2, npm, gcc-c++, git, gtk3-devel, gtk3
+Requires: python2, npm, gcc-c++, git, gtk3-devel, gtk3
 Provides: signal-desktop
 Summary: Signal Private Messenger for the Desktop
 Release: 1

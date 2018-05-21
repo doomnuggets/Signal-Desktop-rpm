@@ -1,6 +1,6 @@
 # Signal-Desktop RPM
 
-Build an `rpm` package for [Signal-Desktop](https://github.com/signalapp/Signal-Desktop) to install Signal on Fedora (maybe even works for CentOS).
+Build an `rpm` package for [Signal-Desktop](https://github.com/signalapp/Signal-Desktop) to install Signal on Fedora.
 
 
 ## How to build the RPM?
@@ -15,6 +15,12 @@ Build an `rpm` package for [Signal-Desktop](https://github.com/signalapp/Signal-
 
 If my current Signal copy is outdated you should be able to execute
 `./update.sh` and rebuild the `rpm` package.
+
+
+## What about CentOS?
+
+Currently it doesn't work with CentOS due to version mismatches of npm and nodejs.
+Feel free to submit a PR which solves that issue.
 
 
 ## Why does this even exist?
