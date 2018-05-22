@@ -17,12 +17,6 @@ If my current Signal copy is outdated you should be able to execute
 `./update.sh` and rebuild the `rpm` package.
 
 
-## What about CentOS?
-
-Currently it doesn't work with CentOS due to version mismatches of npm and nodejs.
-Feel free to submit a PR which solves that issue.
-
-
 ## Why does this even exist?
 
 The official Repository for Signal doesn't yet contain an official `rpm` for Fedora/RHEL users.
