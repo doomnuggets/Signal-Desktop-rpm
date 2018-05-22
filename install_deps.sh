@@ -44,7 +44,7 @@ fi
 # Fedora has a decent version for node and npm, we can simply install them.
 if [ $distro == 'fedora' ]
 then
-    udo $packagemgr install node npm -y
+    sudo $packagemgr install node npm -y
 fi
 
 # Install yarn
