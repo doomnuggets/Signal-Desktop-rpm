@@ -7,8 +7,8 @@ Build an `rpm` package for [Signal-Desktop](https://github.com/signalapp/Signal-
 
 1. Clone the repo && `cd` into it.
 2. Execute `make clean && make dependencies && make build`
-3. Install the freshly built `rpm` package with `dnf`: `dnf install ./RPMS/x86_64/Signal-Desktop-1.11.0-1.x86_64.rpm`
-4. To use Signal, invoke: `signal-desktop` from the commandline.
+3. Install the just built `rpm` package (`./RPMS/x86_64/*.rpm`) with either `yum` or `dnf`.
+4. Execute `signal-desktop` from the commandline.
 
 
 ## New Signal Version?
@@ -29,7 +29,6 @@ Sure you can! I've included a simple but useful `Vagrantfile` in the project
 root. With this you can spawn two VirtualBox VMs (CentOS 7 & Fedora 27), build the source and see for
 yourself if it's working or not. (Let me know if something isn't).
 
-
 **Fedora:**
 
 ```
@@ -47,6 +46,7 @@ cd /vagrant
 make dependencies && make build
 sudo yum install ./RPMS/x86_64/Signal-Desktop-1.11.0-1.el7.centos.x86_64.rpm -y
 ```
+
 
 ## Credits / References
 
