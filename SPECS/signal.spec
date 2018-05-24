@@ -83,6 +83,7 @@ yarn build-release --dir
 
 npm config set prefix ${_npm_prefix}
 
+
 %install
 cd %{_builddir}/%{name}-%{version}
 install -dm755 "%{buildroot}/usr/lib/%{pkgname}"
@@ -95,6 +96,5 @@ done
 
 install -dm755 %{buildroot}/usr/bin
 install -Dm755 %{_sourcedir}/pkg/%{pkgname}.sh %{buildroot}/usr/bin/%{pkgname}-desktop
-
 install -Dm644 %{_sourcedir}/pkg/%{pkgname}.desktop %{buildroot}/usr/share/applications/%{pkgname}.desktop
 install -Dm644 %{_sourcedir}/pkg/%{pkgname}-tray.desktop %{buildroot}/usr/share/applications/%{pkgname}-tray.desktop
